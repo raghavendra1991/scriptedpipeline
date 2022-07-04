@@ -20,7 +20,7 @@ node ("slave") {
     }
     stage('Push Docker Image to DockerHub') {
         docker.withRegistry('', 'docker-hub') {
-            docker.imagepush("${image}:${env.BUILD_ID}")
+            image.push("${image}:${env.BUILD_ID}")
         }
     }
 }
